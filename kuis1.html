@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peluang Kelas 8</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background: linear-gradient(90deg, #4a90e2, #003366);
+            padding: 1rem 0;
+            width: 100%;
+            color: white;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .nav-links li {
+            position: relative;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ffdd57;
+        }
+
+        .burger {
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+            gap: 0.3rem;
+        }
+
+        .burger div {
+            width: 25px;
+            height: 3px;
+            background: white;
+            transition: all 0.3s;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .home {
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .home h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .home p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+
+        footer {
+            background: #4a90e2;
+            color: hsl(0, 0%, 100%); /* Warna teks putih */
+            text-align: center; /* Teks di tengah */
+            padding: 1rem 0;
+            position: relative;
+            width: 100%;
+            bottom: 0;
+        }
+        footer {
+            display: flex;
+            color: rgb(255, 255, 255); /* Warna teks putih */
+            justify-content: center;
+            align-items: center;
+        }
+
+        footer p {
+            margin: 0;
+            letter-spacing: 0.5px;
+            font-weight: 400;
+        }
+        footer p {
+            color: white !important;
+        }
+        .background-image {
+            width: 40%;
+            height: auto;
+            margin-top: 30px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                background: #4a90e2;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                width: 100%;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .burger {
+                display: flex;
+            }
+
+            .burger.toggle .line1 {
+                transform: rotate(-45deg) translate(-5px, 6px);
+            }
+
+            .burger.toggle .line2 {
+                opacity: 0;
+            }
+
+            .burger.toggle .line3 {
+                transform: rotate(45deg) translate(-5px, -6px);
+            }
+        }
+
+        /* Gaya tambahan untuk bagian materi peluang */
+        .content-container {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: #007BFF;
+            margin-bottom: 20px;
+        }
+
+        p, ul {
+            margin-bottom: 20px;
+            line-height: 1.6;
+            text-align: justify;
+            color: #333;
+        }
+
+        ul {
+            margin-left: 20px;
+        }
+
+        .formula {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        img {
+            display: block;
+            margin: 0 auto;
+            width: 200px;
+        }
+
+        .question {
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .solution {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Peluang Kelas 8</div>
+            <ul class="nav-links">
+                <li><a href="home.html"><i class="fas fa-home"></i> Beranda</a></li>
+                <li><a href="materi1.html"><i class="fas fa-book"></i> Materi</a></li>
+                <li><a href="contoh1.html"><i class="fas fa-pencil-alt"></i> Contoh Soal</a></li>
+                <li><a href="latihan1.html"><i class="fas fa-edit"></i> Latihan</a></li>
+                <li><a href="kuis1.html"><i class="fas fa-question-circle"></i> Kuis</a></li>
+                <li><a href="kontak1.html"><i class="fas fa-envelope"></i> Kontak</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+    <img src="kis1.jpeg" alt="Gambar Latar" class="background-image">
+
+    <!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kuis Peluang Kelas 8</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .quiz-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #007BFF;
+        }
+
+        .form-container {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            width: 80%;
+            max-width: 300px;
+            margin: 10px auto;
+            display: block;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus {
+            border-color: #007BFF;
+            outline: none;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+
+        .question-container {
+            margin-bottom: 20px;
+        }
+
+        #resultContainer {
+            margin-top: 30px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="quiz-container">
+    <h1>Kuis Peluang Kelas 8</h1>
+    <div class="form-container" id="formContainer">
+        <label for="name">Nama:</label>
+        <input type="text" id="name" placeholder="Masukkan nama" required>
+        <label for="class">Kelas:</label>
+        <input type="text" id="class" placeholder="Masukkan kelas" required>
+        <button id="startButton">Mulai Kuis</button>
+    </div>
+
+    <div id="quizContent" style="display:none;">
+        <div class="question-container" id="questionContainer">
+            <!-- Pertanyaan akan dimuat di sini -->
+        </div>
+
+        <div class="button-container">
+            <button id="prevButton" disabled>Previous</button>
+            <button id="nextButton" disabled>Next</button>
+            <button id="submitButton" disabled>Submit</button>
+        </div>
+    </div>
+
+    <div id="resultContainer"></div>
+</div>
+
+<script>
+    const questions = [
+        {
+            question: "Sebuah dadu dilempar sekali. Berapakah peluang munculnya angka 3?",
+            options: ["1/3", "1/2", "1/6", "0"],
+            answer: "1/6",
+            explanation: "Peluang munculnya angka tertentu pada dadu adalah 1 dari 6 sisi."
+        },
+        {
+            question: "Sebuah koin dilempar sekali. Berapakah peluang munculnya gambar?",
+            options: ["1/2", "1/3", "1/6", "0"],
+            answer: "1/2",
+            explanation: "Koin memiliki 2 sisi, jadi peluang munculnya gambar adalah 1/2."
+        },
+        {
+            question: "Jika sebuah dadu dilempar dua kali, berapakah peluang mendapatkan dua angka genap?",
+            options: ["1/4", "1/3", "1/2", "1/6"],
+            answer: "1/4",
+            explanation: "Ada 3 angka genap (2, 4, 6) dari 6 angka, jadi peluang mendapatkan angka genap pada satu lemparan adalah 3/6 = 1/2. Untuk dua lemparan, (1/2) * (1/2) = 1/4."
+        },
+        {
+            question: "Di dalam kantong terdapat 3 bola merah, 2 bola biru, dan 5 bola hijau. Jika satu bola diambil secara acak, berapakah peluang mengambil bola merah?",
+            options: ["1/10", "3/10", "3/5", "1/5"],
+            answer: "3/10",
+            explanation: "Jumlah total bola adalah 10 (3 merah + 2 biru + 5 hijau). Peluang mengambil bola merah adalah 3/10."
+        },
+        {
+            question: "Sebuah koin dilempar tiga kali. Berapakah peluang mendapatkan 2 gambar?",
+            options: ["3/8", "1/4", "1/2", "1/8"],
+            answer: "3/8",
+            explanation: "Ada 8 kemungkinan hasil (GGG, GGT, GTG, GTT, TGG, TGT, TTG, TTT). Hasil dengan 2 gambar adalah GGT, GTG, TGG, jadi ada 3 hasil dari 8, sehingga peluangnya adalah 3/8."
+        },
+        {
+            question: "Sebuah kartu diambil dari dek 52 kartu. Berapakah peluang mendapatkan kartu hati?",
+            options: ["1/4", "1/13", "1/52", "1/2"],
+            answer: "1/4",
+            explanation: "Ada 13 kartu hati dari total 52 kartu. Peluang mendapatkan kartu hati adalah 13/52 = 1/4."
+        },
+        {
+            question: "Di dalam kotak terdapat 4 kelereng hijau, 3 merah, dan 5 biru. Jika satu kelereng diambil secara acak, berapakah peluang mengambil kelereng biru?",
+            options: ["1/3", "5/12", "5/10", "1/4"],
+            answer: "5/12",
+            explanation: "Jumlah total kelereng adalah 12 (4 hijau + 3 merah + 5 biru). Peluang mengambil kelereng biru adalah 5/12."
+        },
+        {
+            question: "Jika ada 5 angka yang ditulis di papan (1, 2, 3, 4, 5), berapakah peluang untuk mengambil angka lebih dari 3?",
+            options: ["1/2", "1/5", "2/5", "3/5"],
+            answer: "2/5",
+            explanation: "Ada 2 angka lebih dari 3 (4 dan 5) dari 5 angka total. Jadi, peluangnya adalah 2/5."
+        },
+        {
+            question: "Sebuah dadu dilempar. Berapakah peluang untuk mendapatkan angka 1 atau 2?",
+            options: ["1/3", "1/2", "1/6", "1/4"],
+            answer: "1/3",
+            explanation: "Ada 2 angka (1 dan 2) yang diinginkan dari total 6 angka. Jadi, peluangnya adalah 2/6 = 1/3."
+        },
+        {
+            question: "Dari sebuah dek kartu, berapakah peluang untuk menarik kartu As?",
+            options: ["1/26", "1/52", "1/13", "1/4"],
+            answer: "1/52",
+            explanation: "Ada 4 kartu As dari total 52 kartu. Peluang untuk menarik kartu As adalah 4/52 = 1/13."
+        }
+    ];
+
+    let currentQuestionIndex = 0;
+    let answers = [];
+
+    function displayQuestion(index) {
+        const questionContainer = document.getElementById('questionContainer');
+        const questionData = questions[index];
+        questionContainer.innerHTML = `
+            <h3>Soal ${index + 1}: ${questionData.question}</h3>
+            ${questionData.options.map((option) => `
+                <label><input type="radio" name="question${index}" value="${option}"> ${option}</label>
+            `).join('')}
+        `;
+        
+        // Pastikan jawaban yang sebelumnya dipilih tetap ditampilkan
+        const selectedAnswer = answers[index];
+        if (selectedAnswer) {
+            document.querySelector(`input[name="question${index}"][value="${selectedAnswer}"]`).checked = true;
+        }
+    }
+
+    function initQuiz() {
+        const name = document.getElementById('name').value;
+        const studentClass = document.getElementById('class').value;
+
+        if (name === '' || studentClass === '') {
+            alert('Nama dan kelas harus diisi!');
+            return;
+        }
+
+        document.getElementById('formContainer').style.display = 'none';
+        document.getElementById('nextButton').disabled = false;
+        displayQuestion(currentQuestionIndex);
+        document.getElementById('quizContent').style.display = 'block';
+    }
+
+    function nextQuestion() {
+        const selectedOption = document.querySelector(`input[name="question${currentQuestionIndex}"]:checked`);
+        if (selectedOption) {
+            answers[currentQuestionIndex] = selectedOption.value;
+        }
+
+        if (currentQuestionIndex < questions.length - 1) {
+            currentQuestionIndex++;
+            displayQuestion(currentQuestionIndex);
+            document.getElementById('prevButton').disabled = false;
+        }
+
+        if (currentQuestionIndex === questions.length - 1) {
+            document.getElementById('nextButton').disabled = true;
+            document.getElementById('submitButton').disabled = false;
+        }
+    }
+
+    function prevQuestion() {
+        if (currentQuestionIndex > 0) {
+            currentQuestionIndex--;
+            displayQuestion(currentQuestionIndex);
+            document.getElementById('nextButton').disabled = false;
+        }
+
+        if (currentQuestionIndex === 0) {
+            document.getElementById('prevButton').disabled = true;
+        }
+    }
+
+    function submitQuiz() {
+        const resultContainer = document.getElementById('resultContainer');
+        resultContainer.innerHTML = '';
+
+        let correctAnswers = 0;
+        answers.forEach((answer, index) => {
+            const questionData = questions[index];
+            const isCorrect = answer === questionData.answer;
+            if (isCorrect) correctAnswers++;
+        });
+
+        const score = Math.round((correctAnswers / questions.length) * 100);
+        resultContainer.innerHTML += `<strong>Skor Anda: ${score}/100</strong><br><br>`;
+
+        questions.forEach((question, index) => {
+            const answer = answers[index] || 'Tidak dijawab';
+            const isCorrect = answer === question.answer;
+            resultContainer.innerHTML += `
+                <div>
+                    <strong>Soal ${index + 1}: ${question.question}</strong><br>
+                    Jawaban Anda: ${answer} ${answer === 'Tidak dijawab' ? '' : (isCorrect ? '(Benar)' : '(Salah)')}<br>
+                    Penjelasan: ${question.explanation}
+                </div><br>
+            `;
+        });
+
+        resultContainer.innerHTML += '<button id="restartButton">Mulai Ulang Kuis</button>';
+        resultContainer.style.display = 'block';
+        document.getElementById('quizContent').style.display = 'none';
+
+        document.getElementById('restartButton').addEventListener('click', restartQuiz);
+    }
+
+    function restartQuiz() {
+        currentQuestionIndex = 0;
+        answers = [];
+        document.getElementById('formContainer').style.display = 'block';
+        document.getElementById('resultContainer').style.display = 'none';
+        document.getElementById('quizContent').style.display = 'none';
+        document.getElementById('name').value = '';
+        document.getElementById('class').value = '';
+    }
+
+    document.getElementById('startButton').addEventListener('click', initQuiz);
+    document.getElementById('nextButton').addEventListener('click', nextQuestion);
+    document.getElementById('prevButton').addEventListener('click', prevQuestion);
+    document.getElementById('submitButton').addEventListener('click', submitQuiz);
+</script>
+
+</body>
+</html>
+
+
+    <footer>
+        <p>© 2024 Materi Peluang Kelas 8. Hartati Rintan.</p>
+    </footer>
+
+    <script>
+        const burger = document.querySelector('.burger');
+        const navLinks = document.querySelector('.nav-links');
+
+        burger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            burger.classList.toggle('toggle');
+        });
+    </script>
+</body>
+</html>
